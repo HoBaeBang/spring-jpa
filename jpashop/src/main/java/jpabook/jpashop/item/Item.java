@@ -32,7 +32,7 @@ public abstract class Item {
 
 
     //===비지니스 로직===//
-    public void addQuantity(int quantity){
+    public void addStock(int quantity){
         this.stockQuantity += quantity;
     }
 
