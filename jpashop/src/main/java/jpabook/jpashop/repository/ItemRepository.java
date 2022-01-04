@@ -11,6 +11,7 @@ import java.util.List;
 @Repository
 @RequiredArgsConstructor
 public class ItemRepository {
+
     @PersistenceContext
     private final EntityManager em;
 
@@ -21,6 +22,7 @@ public class ItemRepository {
     public void save(Item item) {
         if (item.getId() == null) {
             em.persist(item);
+            System.out.println("퍼시스턴트 아이템");
         } else {
             em.merge(item);
         }

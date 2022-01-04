@@ -1,6 +1,7 @@
 package jpabook.jpashop.controller;
 
 import jpabook.jpashop.item.Book;
+import jpabook.jpashop.item.Item;
 import jpabook.jpashop.service.ItemService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -29,6 +30,8 @@ public class ItemController {
         book.setStockQuantity(form.getStockQuantity());
         book.setAuthor(form.getAuthor());
         book.setIsbn(form.getIsbn());
+
+        System.out.println("북안에 들어가 있는내용은 : " + book);
 
         itemService.saveItem(book);
         return "redirect:/";
