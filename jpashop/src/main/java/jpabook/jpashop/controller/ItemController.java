@@ -30,8 +30,7 @@ public class ItemController {
         book.setStockQuantity(form.getStockQuantity());
         book.setAuthor(form.getAuthor());
         book.setIsbn(form.getIsbn());
-
-        System.out.println("북안에 들어가 있는내용은 : " + book);
+        System.out.println("컨트로로러 북안에 들어가 있는내용은 : " + book.getName());
 
         itemService.saveItem(book);
         return "redirect:/";
