@@ -20,14 +20,14 @@ public class ItemRepository {
      * @param item
      */
     public void save(Item item) {
-        em.persist(item);
-        //if (item.getId() == null) {
-        //    em.persist(item);
-        //    System.out.println(item.getName()+ item.getId()+ item.getPrice());
+
+        if (item.getId() == null) {
+            em.persist(item);
+            System.out.println(item.getName()+ item.getId()+ item.getPrice());
             System.out.println("퍼시스턴트 아이템");
-        //} else {
-        //    em.merge(item);
-        //}
+        } else {
+            em.merge(item);
+        }
     }
 
     /***
