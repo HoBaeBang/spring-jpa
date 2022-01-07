@@ -1,5 +1,6 @@
 package jpabook.jpashop.item;
 
+import jpabook.jpashop.service.UpdateBookDto;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -13,5 +14,10 @@ public class Book extends Item {
 
     private String author;
     private String isbn;
+
+    public void changeBook(UpdateBookDto bookDto) {
+        this.setAuthor(bookDto.getAuthor());
+        this.setIsbn(bookDto.getIsbn());
+    }
 
 }
