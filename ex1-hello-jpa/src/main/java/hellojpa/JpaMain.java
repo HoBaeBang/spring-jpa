@@ -36,19 +36,28 @@ public class JpaMain {
 //            }
 
 
-            System.out.println("=== BEFORE ===");
+//            System.out.println("=== BEFORE ===");
 //            em.persist(member);
 //            em.detach(member);
-            System.out.println("=== BEFORE ===");
-
-            Member member1 = em.find(Member.class, 101L);
-            Member member2 = em.find(Member.class, 101L);
+//            System.out.println("=== BEFORE ===");
+//
+//            Member member1 = em.find(Member.class, 101L);
+//            Member member2 = em.find(Member.class, 101L);
 
 //            System.out.println("member.getId() = " + member.getId());
 //            System.out.println("member.getName() = " + member.getName());
 
+//            Member member1 = new Member(150L, "A");
+//            Member member2 = new Member(160L, "A");
+
+//            em.persist(member1);
+//            em.persist(member2);
+
+            Member member = em.find(Member.class, 150L);
+            member.setName("asd");
+
+            System.out.println("==================");
             tx.commit();
-//            em.persist(member);
         }
         catch (Exception e) {
             tx.rollback();
