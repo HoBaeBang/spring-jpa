@@ -54,8 +54,14 @@ public class JpaMain {
 //            em.persist(member2);
 
             Member member = em.find(Member.class, 150L);
-            member.setName("asd");
+            member.setName("AAAAA");
+//            Member member = new Member(200L, "member200");
+//            em.persist(member);
+//            em.flush(); //db에 바뀐내용을 적용
 
+//            em.detach(member);
+//            em.clear();
+//            em.close();
             System.out.println("==================");
             tx.commit();
         }
