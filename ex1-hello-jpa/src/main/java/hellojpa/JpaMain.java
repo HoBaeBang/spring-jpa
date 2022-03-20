@@ -53,8 +53,8 @@ public class JpaMain {
 //            em.persist(member1);
 //            em.persist(member2);
 
-            Member member = em.find(Member.class, 150L);
-            member.setName("AAAAA");
+//            Member member = em.find(Member.class, 150L);
+//            member.setName("AAAAA");
 //            Member member = new Member(200L, "member200");
 //            em.persist(member);
 //            em.flush(); //db에 바뀐내용을 적용
@@ -62,7 +62,21 @@ public class JpaMain {
 //            em.detach(member);
 //            em.clear();
 //            em.close();
-            System.out.println("==================");
+//            System.out.println("==================");
+
+            Team team = new Team();
+            team.setName("TeamA");
+            em.persist(team);
+
+            Member member = new Member();
+            member.setName("member1");
+            member.setTeam(team);
+            em.persist(member);
+
+            Member findMember = em.find(Member.class, member.getId());
+            Team findTeam = findMember.getTeam();
+            System.out.println("findTeam.getId() = " + findTeam.getId());
+
             tx.commit();
         }
         catch (Exception e) {
